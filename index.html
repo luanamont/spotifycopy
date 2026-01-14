@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/logos/spotify-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <meta name="description" content="Spotify clone interface with albums, artists and player">
+    <meta name="author" content="Luana Monteiro">
+    <meta name="theme-color" content="#1DB954">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo-wrapper">
+                <a href="#">
+                    <img src="/assets/logos/spotify-logo.png" alt="Spotify Logo" class="logo">
+                </a>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><i class="fa-solid fa-house"></i>Home</li>
+                    <li><i class="fa-solid fa-magnifying-glass"></i>Buscar</li>
+                    <li><i class="fa-solid fa-book"></i>Minha Biblioteca</li>
+                    <li><i class="fa-solid fa-list-ul"></i>Minhas Playlist</li>
+                    <li><i class="fa-solid fa-heart"></i>Músicas Curtidas</li>
+                </ul>
+            </nav> 
+            <hr>
+            <ul class="sidebar-recent">
+                <li><span class="scroll-text" title="claraboia - ANAVITORIA">claraboia - ANAVITORIA</span></li>       
+                <li><span class="scroll-text" title="Esquinas - ANAVITORIA">Esquinas - ANAVITORIA</span></li>               
+                <li><span class="scroll-text" title="HIT ME HARD AND SOFT - Billie Eilish">HIT ME HARD AND SOFT - Billie Eilish</span></li>                
+                <li><span class="scroll-text" title="SWAG - Justin Bieber">SWAG - Justin Bieber</span></li>               
+                <li><span class="scroll-text" title="O Tempo é agora - ANAVITORIA">O Tempo é agora - ANAVITORIA</span></li>                
+                <li><span class="scroll-text" title="No Escuro Quem É Você? - Carol Biazin">No Escuro Quem É Você? - Carol Biazin</span></li>                
+                <li><span class="scroll-text" title="From Zero - Linkin Park">From Zero - Linkin Park</span></li>                
+                <li><span class="scroll-text" title="Clancy - Twenty One Pilots">Clancy - Twenty One Pilots</span></li>                
+                <li><span class="scroll-text" title="SWAG II - Justin Bieber">SWAG II - Justin Bieber</span></li>                
+                <li><span class="scroll-text" title="AMAReSó - Carol Biazin">AMAReSó - Carol Biazin</span></li>
+                <li><span class="scroll-text" title="O Mundo é Tão Pequeno - Jorge e Matheus">O Mundo é Tão Pequeno - Jorge e Matheus</span></li>
+                <li><span class="scroll-text" title="THE GREATEST - Billie Eilish">THE GREATEST - Billie Eilish</span></li>
+                <li><span class="scroll-text" title="Códigos - Billie Eilish">Códigos - Carol Biazin</span></li>
+                <li><span class="scroll-text" title="Lisboa - ANAVITORIA ft. Lenine">Lisboa - ANAVITORIA ft. Lenine</span></li>
+                <li><span class="scroll-text" title="Dilemas da vida moderna - Carol Biazin">Dilemas da vida moderna - Carol Biazin</span></li>
+            </ul>
+        </aside>                    
+        
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="nav-buttons"></div>
+                <div class="user-profile">
+                    <span><i class="fa-solid fa-circle-user"></i>luana_mont</span>
+                </div>
+            </header>
+
+            <!--ALBUMS AND ARTISTS-->
+            <section class="content-section">
+                <h2>Boa noite, Luana!</h2>
+                <h3>Ouvidos Recentemente</h3>
+                <div class="scroll-row">
+                    <div class="cards-albuns-recents">
+                        <div class="card">
+                            <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/1/ab6761610000e5eb9e528993a2820267b97f6aae/en" alt="Daily Mix 1"/>
+                            <button class="play-button" aria-label="Play">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </button>
+                            <p title="Daily Mix 1">Daily Mix 1</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/2/ab6761610000e5ebb99cacf8acd5378206767261/en" alt="Daily Mix 2"/>
+                            <button class="play-button" aria-label="Play">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </button>
+                            <p title="Daily Mix 2">Daily Mix 2</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://i.scdn.co/image/ab67706f0000000243cc4425ca68418fcab705fd" alt="Chill Vibes"/>
+                            <button class="play-button" aria-label="Play">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </button>
+                            <p title="Chill Vibes">Chill Vibes</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://i.scdn.co/image/ab67706f000000021da8a6c4b1647a5c33e8a5b3" alt="This Is Justin Bieber"/>
+                            <button class="play-button" aria-label="Play">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </button>
+                            <p title="This is Justin Bieber">This is Justin Bieber</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://i.scdn.co/image/ab67706f000000021e90d0ba15e76049f0d745ae" alt="This Is Billie Eilish"/>
+                            <button class="play-button" aria-label="Play">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </button>
+                            <p title="This is Billie Eilish">This is Billie Eilish</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2k3tf2-default.jpg" alt="This Is Twenty One Pilots"/>
+                            <button class="play-button" aria-label="Play">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </button>
+                            <p title="This Is Twenty One Pilots">This Is Twenty One Pilots</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84211e9cb34423b1a26d9f39f0" alt="Your Top Songs 2025"/>
+                            <button class="play-button" aria-label="Play">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </button>
+                            <p title="Your Top Songs 2025">Your Top Songs 2025</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO0OaV3q-default.jpg" alt="This Is ANAVITORIA"/>
+                            <button class="play-button" aria-label="Play">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </button>
+                            <p title="This Is ANAVITORIA">This Is ANAVITORIA</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://i.scdn.co/image/ab67616d00001e023066581d697fbdee4303d685" alt="Wiped Out"/>
+                            <button class="play-button" aria-label="Play">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </button>
+                            <p title="Wiped Out - The Neighbourhood">Wiped Out <br> The Neighbourhood</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://i.scdn.co/image/ab67616d00001e0278cba6a1edfe4235def632ed" alt="Breach"/>
+                            <button class="play-button" aria-label="Play">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </button>
+                            <p title="Breach - Twenty One Pilots">Breach <br> Twenty One Pilots</p>
+                        </div>
+                    </div>
+                </div> 
+                <!--ARTISTS-->   
+                <section class="artists">
+                    <h3>Seus artistas populares favoritos</h3>
+                    <div class="scroll-row">
+                        <div class="cards-artists">
+                            <div class="card-artists">
+                                <img src="https://i.scdn.co/image/ab6761610000e5ebe672b5f553298dcdccb0e676" alt="Taylor Swift">
+                                <p title="Taylor Swift">Taylor Swift</p>
+                            </div>
+                            <div class="card-artists">
+                                <img src="https://i.scdn.co/image/ab6761610000e5eb76470faf6330235edbcb90a9" alt="Camila Cabello">
+                                <p title="Camila Cabello">Camila Cabello</p>
+                            </div>
+                            <div class="card-artists">
+                                <img src="https://i.scdn.co/image/ab6761610000517461a7ea26d33ded218cd1e59d" alt="Twenty One Pilots">
+                                <p title="Twenty One Pilots">Twenty One Pilots</p>
+                            </div>
+                            <div class="card-artists">
+                                <img src="https://i.scdn.co/image/ab6761610000e5ebe17c0aa1714a03d62b5ce4e0" alt="Post Malone">
+                                <p title="Post Malone">Post Malone</p>
+                            </div>
+                            <div class="card-artists">
+                                <img src="https://i.scdn.co/image/ab6761610000e5eb2d972470f1f8110be7c07017" alt="Ghost">
+                                <p title="Ghost">Ghost</p>
+                            </div>
+                            <div class="card-artists">
+                                <img src="https://i.scdn.co/image/ab6761610000517418a1928eb2892201f56d39e0" alt="Novo Amor">
+                                <p title="Novo Amor">Novo Amor</p>
+                            </div>
+                            <div class="card-artists">
+                                <img src="https://i.scdn.co/image/ab6761610000e5ebaa7e4337ef3969e7ce27876e" alt="Catfish and the Bottlemen">
+                                <p title="Catfish and the Bottlemen">Catfish and the Bottlemen</p>
+                            </div>
+                            <div class="card-artists">
+                                <img src="https://i.scdn.co/image/ab67616100005174a4e2d7045cbcca592ba6c7dd" alt="Chase Atlantic">
+                                <p title="Chase Atlantic">Chase Atlantic</p>
+                            </div>
+                            <div class="card-artists">
+                                <img src="https://i.scdn.co/image/ab6761610000e5eb0597e920287919b83192af5a" alt="Carol Biazin">
+                                <p title="Carol Biazin">Carol Biazin</p>
+                            </div>
+                            <div class="card-artists">
+                                <img src="https://i.scdn.co/image/ab6761610000e5eb1ba8fc5f5c73e7e9313cc6eb" alt="Coldplay">
+                                <p title="Coldplay">Coldplay</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--GENRE SECTION-->
+                <section class="genre-section">
+                    <h3>Álbuns populares favoritos</h3>
+                    <!--POP-->
+                    <h4>Pop</h4>
+                    <div class="scroll-row">
+                        <div class="cards-popular-albums">
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a" alt="SOUR">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="SOUR">SOUR</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Olívia Rodrigo">Olívia Rodrigo</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d0000b2738eb00294c4856633a918e9ce" alt="Caju">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="CAJU">CAJU</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Liniker">Liniker</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d0000b27371d62ea7ea8a5be92d3c1f62" alt="HIT ME HARD AND SOFT">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="HIT ME HARD AND SOFT">HIT ME HARD AND SOFT</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Billie Eilish">Billie Eilish</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d0000b273190aaad879fd91cebab37efd" alt="Esquinas">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Esquinas">Esquinas</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="ANAVITORIA">ANAVITORIA</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d0000b273a958d093e94944dd0e7258b2" alt="SWAG II">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="SWAG II">SWAG II</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Justin Bieber">Justin Bieber</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d0000b2738c822133bf3cf6ae2de1d644" alt="No Escuro Quem É Você?">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="No Escuro, Quem É Você?">No Escuro, Quem É Você?</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Carol Biazin">Carol Biazin</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e028ef2562a1156ea6766e00ecb" alt="C, XOXO">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="C, XOXO">C, XOXO</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Camila Cabello">Camila Cabello</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab6761610000e5eb3a73517b20ba60b63324457c" alt="CAOS DLX">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="CAOS DLX">CAOS DLX</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Alee">Alee</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02fd8d7a8d96871e791cb1f626" alt="Short 'n Sweet">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Short 'n Sweet">Short 'n Sweet</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Sabrina Carpenter">Sabrina Carpenter</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36" alt="After Hours">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="After Hours">After Hours</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="The Weeknd">The Weeknd</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ROCK-->
+                    <h4>Rock</h4>
+                    <div class="scroll-row">
+                        <div class="cards-popular-albums">
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d0000b273a493a67f01bcfe65b23bc910" alt="From Zero">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="From Zero">From Zero</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Linkin Park">Linkin Park</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0278cba6a1edfe4235def632ed" alt="Breach">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Breach">Breach</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Twenty One Pilots">Twenty One Pilots</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e023d01f39642426b65217fbe21" alt="Too Weird to Live, Too Rare to Die!">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Too Weird to Live, Too Rare to Die!">Too Weird to Live, Too Rare to Die!</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Panic! At The Disco">Panic! At The Disco</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0239616ad3532953de1414c9c7" alt="Surrender">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Surrender">Surrender</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Amira Elfeky">Amira Elfeky</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02e01d7d558032457b0e4883f6" alt="Brand New Eyes">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Brand New Eyes">Brand New Eyes</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Paramore">Paramore</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0201fa9a3a205b2c152ea1f9e7" alt="Symphony Soldier">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Symphony Soldier">Symphony Soldier</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="The Cab">The Cab</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0225f49ab23f0ec6332efef432" alt="Fallen">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Fallen">Fallen</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Evanescence">Evanescence</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab6761610000e5eb3a73517b20ba60b63324457c" alt="CAOS DLX">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="CAOS DLX">CAOS DLX</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Alee">Alee</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02bc4b223f7b09afc759958f6c" alt="No Need To Argue (2025 Remastered)">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="No Need To Argue (2025 Remastered)">No Need To Argue (2025 Remastered)</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="The Cranberries">The Cranberries</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0294d08ab63e57b0cae74e8595" alt="Californication (Deluxe Edition)">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Californication (Deluxe Edition)">Californication (Deluxe Edition)</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Red Hot Chili Peppers">Red Hot Chili Peppers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--INDIE-->
+                    <h4>Indie</h4>
+                    <div class="scroll-row">
+                        <div class="cards-popular-albums">
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e020b1993db92eecc2dd5021293" alt="For Emma, Forever Ago">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="For Emma, Forever Ago">For Emma, Forever Ago</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Bon Iver">Bon Iver</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02cd4b0b0947bdd7708d24349e" alt="xx">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="xx">xx</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="The xx">The xx</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02dcd504f678c14b1593605ff5" alt="Whatever People Say I Am, That's What I'm Not">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Whatever People Say I Am, That's What I'm Not">Whatever People Say I Am, That's What I'm Not</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Arctic Monkeys">Arctic Monkeys</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0268968350c2550e36d96344ee" alt="Gemini Rights">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Gemini Rights">Gemini Rights</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Steve Lacy">Steve Lacy</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0205ac3e026324594a31fad7fb" alt="Freudian">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Freudian">Freudian</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Daniel Caesar">Daniel Caesar</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e024cc52cd7a712842234e4fce2" alt="BALLADS 1">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="BALLADS 1">BALLADS 1</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Joji">Joji</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02fddfffec51b4580acae727c1" alt="DECIDE">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="DECIDE">DECIDE</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Djo">Djo</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0234f21d3047d85440dfa37f10" alt="The Land Is Inhospitable and So Are We">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="The Land Is Inhospitable and So Are We">The Land Is Inhospitable and So Are We</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Mitski">Mitski</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e029b6ac98a52f62d5cb473da40" alt="Hard To Imagine The Neighbourhood Ever Changing">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Hard To Imagine The Neighbourhood Ever Changing">Hard To Imagine The Neighbourhood Ever Changing</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="The Neighbourhood">The Neighbourhood</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0219d85a472f328a6ed9b704cf" alt="Demon Days">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Demon Days">Demon Days</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Gorillaz">Gorillaz</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--MPB-->   
+                    <h4>MPB</h4>
+                    <div class="scroll-row">
+                        <div class="cards-popular-albums">
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02b1e8a9fa2c21159ea637b766" alt="COR">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="COR">COR</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="ANAVITORIA">ANAVITORIA</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e021133d6a1e76c6b4b60c9e447" alt="Melim">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Melim">Melim</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Melim">Melim</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02c87ac0b25bb1791cbb8d0c33" alt="Pearl">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Pearl">Pearl</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Rubel">Rubel</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02929642e6798d1bf776c6201c" alt="BASEADO EM FATOS REAIS (menos as partes que eu inventei)">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="BASEADO EM FATOS REAIS (menos as partes que eu inventei)">BASEADO EM FATOS REAIS (menos as partes que eu inventei)</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Ana Gabriela">Ana Gabriela</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02db0c7837abb7c812c5df8d93" alt="As Cores, as Curvas e as Dores do Mundo">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="As Cores, as Curvas e as Dores do Mundo">As Cores, as Curvas e as Dores do Mundo</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Lagum">Lagum</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0250775ed53d4774d3312c9f9a" alt="Brasileiro">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Brasileiro">Brasileiro</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Silva">Silva</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0256c49c338313edd7f45b217d" alt="OutroEu">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="OutroEu">OutroEu</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="OutroEu">OutroEu</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02fdd29f4d7b4345b95f02e44f" alt="Banda do Mar">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Banda do Mar">Banda do Mar</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Banda do Mar">Banda do Mar</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e024706cdf17b8c13b73ef2f570" alt="Ao Vivo no Auditório Ibirapuera">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Ao Vivo no Auditório Ibirapuera">Ao Vivo no Auditório Ibirapuera</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="5 a Seco">5 a Seco</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e022253c41bfeac02997def39e2" alt="Adoniran Barbosa">
+                                <div class="btn-popular-albums">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Adoniran Barbosa">Adoniran Barbosa</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Adoniran Barbosa">Adoniran Barbosa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="music-replay">
+                    <h3>Músicas no replay</h3>
+                    <div class="scroll-row">
+                        <div class="cards-music-replay">
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0242fe69c0e7e5c92f01ece8ce" alt="Ordinary">
+                                <div class="btn-music-replay">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Ordinary">Ordinary</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Alex Warren">Alex Warren</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02d2eb391e0b3c3bc21c127db6" alt="back to friends">
+                                <div class="btn-music-replay">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="back to friends">back to friends</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="sombr">sombr</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02eda9478c39a21e1cdc6609ca" alt="Iris">
+                                <div class="btn-music-replay">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Iris">Iris</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="The Goo Goo Dolls">The Goo Goo Dolls</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02d65c4773bc5061fd27facc5b" alt="DAISIES">
+                                <div class="btn-music-replay">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="DAISIES">DAISIES</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Justin Bieber">Justin Bieber</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0249c26270052e1671add569c1" alt="Sailor Song">
+                                <div class="btn-music-replay">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Sailor Song">Sailor Song</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Gigi Perez">Gigi Perez</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02d2eb391e0b3c3bc21c127db6" alt="undressed">
+                                <div class="btn-music-replay">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="undressed">undressed</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="sombr">sombr</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e029164bafe9aaa168d93f4816a" alt="Sparks">
+                                <div class="btn-music-replay">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Sparks">Sparks</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Coldplay">Coldplay</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02ec548c00d3ac2f10be73366d" alt="Creep">
+                                <div class="btn-music-replay">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Creep">Creep</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Radiohead">Radiohead</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e024dee64ae7ed8d46b9406a3c5" alt="Talvez você precise de mim">
+                                <div class="btn-music-replay">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="Talvez você precise de mim">Talvez você precise de mim</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Veigh">Veigh</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02b8facaef2034405a2eba3c4f" alt="1697">
+                                <div class="btn-music-replay">
+                                    <button class="play-button" aria-label="Play">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                                <div class="name-album">
+                                    <p title="1697">1697</p>
+                                </div>
+                                <div class="name-artist-album">
+                                    <p title="Carol Biazin">Carol Biazin</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>     
+
+    <!--PLAYER-->
+    <footer class="player">
+        <div class="song-info">
+            <img src="https://i.scdn.co/image/ab67616d00001e0278cba6a1edfe4235def632ed" alt="Breach">
+            <div>
+                <p class="title"><strong>Cottonwood</strong></p>
+                <p class="artist">Twenty One Pilots</p>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="buttons">
+                <button><i class="fa-solid fa-backward-fast"></i></button>
+                <button><i class="fa-solid fa-backward"></i></button>
+                <button id="playPauseBtn"><i class="fa-solid fa-circle-pause"></i></button>
+                <button><i class="fa-solid fa-forward"></i></button>
+                <button><i class="fa-solid fa-forward-fast"></i></button>
+            </div>    
+            <div class="progress-bar">
+                <span id="current-time">01:32</span>
+                <div class="bar">
+                    <div class="progress"></div>
+                </div>
+                <span id="total-time">03:45</span>
+            </div>
+        </div>
+        <div class="volume-like">
+            <i class="fa-solid fa-volume-high" style="margin-right: 10px"></i>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1"/>
+            <button id="likeBtn" aria-label="Save Music">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
